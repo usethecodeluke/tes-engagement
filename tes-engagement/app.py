@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, 'dist')
 
 # App Config
-bottle.debug(True)
+bottle.debug(False)
 app = Bottle()
 
 
@@ -51,4 +51,4 @@ app.install(CorsPlugin(origins=['*.rax.io']))
 
 
 # Run server
-run(app, server='auto', host='localhost', port=8080, reloader=True)
+run(app, server='auto', host='0.0.0.0', port=8080, reloader=True)
