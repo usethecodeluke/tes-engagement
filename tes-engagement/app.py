@@ -35,7 +35,7 @@ def post_comment():
         payload['eventData']['comment'] = comment
     if email:
         payload['eventData']['email'] = email
-    res = requests.post('https://api.kevalin.io/collections/SERVICE.R4R.COMMENTS/events',
+    res = requests.post('https://api.kevalin.io/v0/collections/SERVICE.R4R.COMMENTS/events',
             headers={'Authorization': f'X-API-Key {os.getenv("KEVALIN_API_KEY")}'},
             json=payload)
     res.raise_for_status()
